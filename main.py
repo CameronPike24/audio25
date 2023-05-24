@@ -66,13 +66,15 @@ class Recorder(object):
 
         # reduce by 20%
         r_values = map(lambda x: x * 0.8, r_values)
-
+        print("r_values")
+        print(r_values)
+        '''
         # you can assign only array for slice, not list
         # so we need to convert back list to array
         values[1::2] = array("h", r_values)
         print("values")
         print(values)
-
+        '''
         # convert back the array to a byte buffer for speaker
         #sample.write(values.tostring())
  
