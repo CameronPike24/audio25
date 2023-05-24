@@ -56,6 +56,24 @@ class Recorder(object):
         self.sData.append(buf)
         print ('got : ' + str(len(buf)))
         print(self.sData)
+        
+        # convert our byte buffer into signed short array
+        values = array("h", buf)
+
+        # get right values only
+        r_values = values[1::2]
+
+        # reduce by 20%
+        r_values = map(lambda x: x * 0.8, r_values)
+
+        # you can assign only array for slice, not list
+        # so we need to convert back list to array
+        values[1::2] = array("h", r_values)
+        print("values")
+        print(values)
+
+        # convert back the array to a byte buffer for speaker
+        #sample.write(values.tostring())
  
  
     def start(self):
