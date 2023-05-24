@@ -14,6 +14,7 @@ import os
 from android.permissions import request_permissions,Permission,check_permission
 from kivy_garden.graph import Graph, LinePlot
 import numpy as np 
+from array import array
  
  
 #if not os.path.isdir("/sdcard/kivyrecords/"):
