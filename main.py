@@ -99,6 +99,7 @@ class Recorder(object):
         wf.setsampwidth(2)
         wf.setframerate(self.mic.rate)
         wf.writeframes(b''.join(self.sData))
+        print("we at stop")
         wf.close()
  
 REC = Recorder()
@@ -128,10 +129,10 @@ class RecordForm(BoxLayout): #
         #REC.prepare()
         REC.start()
         Clock.schedule_once(self.stop_record, recordtime)
-        Clock.schedule_interval(self.update_display, 1/30.)
+        #Clock.schedule_interval(self.update_display, 1/30.)
  
     def stop_record(self, dt):
-        Clock.unschedule(self.update_display)
+        #Clock.unschedule(self.update_display)
         #self.p_bar.value = 0
         REC.stop()
         #self.b_record.disabled = False
