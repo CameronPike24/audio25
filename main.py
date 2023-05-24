@@ -49,6 +49,8 @@ class Recorder(object):
         self.mic = get_input(callback=self.mic_callback, source='mic', buffersize=self.BufferSize)
         print("This is the audio source")
         print(self.AudioSource)
+        print("This is the mic channels")
+        print(self.mic.channels)
  
     def mic_callback(self, buf):
         self.sData.append(buf)
@@ -78,7 +80,7 @@ class Recorder(object):
         wf.close()
  
 REC = Recorder()
-
+'''
 class RecordApp(App):
 	
     def __init__(self, **kwargs):
@@ -92,7 +94,7 @@ class RecordApp(App):
         return RecordForm()
         #return Builder.load_file("look.kv")
   
-     
+'''     
         
 class RecordForm(BoxLayout): #
     #b_record = ObjectProperty()
